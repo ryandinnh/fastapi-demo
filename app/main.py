@@ -44,6 +44,11 @@ def get_one_album(id):
     results = c.fetchall()
     db.close()
     return results
+
+#new endpoint for lab 6 
+@app.get("/greeting")
+def get_greeting():
+    return {"Message": "Hello World"}
     
 # Start using the "Item" BaseModel
 # Post / Delete / Patch methods
