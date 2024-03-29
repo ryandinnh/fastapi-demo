@@ -33,7 +33,7 @@ def get_greeting():
     return {"Message": "Hello World"}
 
 @app.get("/farewell")
-def get_greeting():
+def get_farewell():
     return {"Message": "Bye World"}
 
 @app.get("/albums")
