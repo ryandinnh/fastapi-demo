@@ -27,6 +27,15 @@ DB = "rqd3qmk"
 def zone_apex():
     return {"Hello": "Hello API", "album_endpoint":"/albums","static_endpoint":"/static"}
 
+#new endpoints for lab 6 
+@app.get("/greeting")
+def get_greeting():
+    return {"Message": "Hello World"}
+
+@app.get("/farewell")
+def get_greeting():
+    return {"Message": "Bye World"}
+
 @app.get("/albums")
 def get_all_albums():
     db = MySQLdb.connect(host=DBHOST, user=DBUSER, passwd=DBPASS, db=DB)
@@ -44,11 +53,6 @@ def get_one_album(id):
     results = c.fetchall()
     db.close()
     return results
-
-#new endpoint for lab 6 
-@app.get("/greeting")
-def get_greeting():
-    return {"Message": "Hello World"}
     
 # Start using the "Item" BaseModel
 # Post / Delete / Patch methods
